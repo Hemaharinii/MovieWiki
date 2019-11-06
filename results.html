@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Search Results</title>
-    <link rel="stylesheet" href="res/css/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  </head>
 
-  <body onload="initialize()">
-    <!-- Fetch API call on page load -->
-    <div id="resultContent">
-      <div class="top">
-        <p id="searchTitle">Results for</p>
-        <p id="result"></p>
-      </div>
-      <!-- Movie listing -->
-      <div class="movies">
-        <div id="loaderContainer"></div>
-        <div id="movies" class="thumbnails"></div>
-        <!-- Load more button -->
-        <div class="buttonHolder">
-          <button
-            id="loadMore"
-            class="loadMore"
-            onclick="loadMovies()"
-            class="hide"
-          >
-            <i class="material-icons">refresh</i> Load More
-          </button>
-        </div>
+<head>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="res/css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body onload="initialize()">
+  <!-- Fetch API call on page load -->
+  <div class="errorWrapper">
+    <div id="errorContainer" class="errorContainer">
+    </div>
+  </div>
+  <div id="resultContent">
+    <div class="top">
+      <p id="searchTitle">Results for</p>
+      <p id="result"></p>
+    </div>
+    <!-- Movie listing -->
+    <div class="movies">
+      <div id="loaderContainer"></div>
+      <div id="movies" class="thumbnails"></div>
+      <!-- Load more button -->
+      <div class="buttonHolder">
+        <button id="loadMore" class="loadMore" onclick="loadMovies()" class="hide">
+          <i class="material-icons">refresh</i> Load More
+        </button>
       </div>
     </div>
-    <script>
-        //Global variables for maintaing movies count
-        var movies = [];
-        var page = 1;
-        var totalResults;
-    </script>
-    <script src="res/js/script.js" > </script>
-    <script src="res/js/loader.js" > </script>
+  </div>
+  <script>
+    //Global variables for maintaing movies count
+    var movies = [];
+    var page = 1;
+    var totalResults;
+  </script>
+  <script src="res/js/script.js"> </script>
+  <script src="res/js/loader.js"> </script>
+  <script src="res/js/showErrorAlert.js"> </script>
 </body>
+
 </html>

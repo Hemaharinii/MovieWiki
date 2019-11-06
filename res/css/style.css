@@ -145,7 +145,7 @@ font-weight:700;
   
   .movieSearch form .inner-form .input-wrap .input-field input.hover,
   .movieSearch form .inner-form .input-wrap .input-field input:focus {
-    box-shadow: none;
+    box-shadow:  none;
     outline: 0;
   }
   
@@ -455,7 +455,7 @@ font-weight:700;
     cursor: pointer;
     background: #202024;
     color: #fff;
-    box-shadow: 0 0 0 1px #ccc;
+    box-shadow:  0 0 0 1px #ccc;
     transition: all .3s;
     justify-content: center;
   }
@@ -487,7 +487,7 @@ font-weight:700;
     margin-top: 70px;
   }
 
-  .go-back-btn {
+  .backBtn {
     display: none;
   }
   
@@ -507,7 +507,7 @@ font-weight:700;
       padding: 10px !important;
     }
 
-    .go-back-btn {
+    .backBtn {
       padding: 16px;
       top: 20px;
       left: 10px;
@@ -527,7 +527,7 @@ font-weight:700;
     border-radius: 4px;
     width: 100%;
     overflow: hidden;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow:  0 0 4px rgba(0, 0, 0, 0.2);
   }
   .contentWrapper {
     display: flex;
@@ -581,7 +581,32 @@ font-weight:700;
     margin: 10px;
   }  
 
-  .loader-wrapper {
+  .errorWrapper {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    z-index: 1000;
+    box-shadow: 1px 2 0 1px #999;
+  }
+
+  .errorWrapper .errorContainer {
+    opacity: 0;
+    background: red;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all .5s;
+  }
+
+  .errorWrapper .errorContainer.show {
+    opacity: 1!important;
+  }
+
+  .errorWrapper .errorContainer .errorText {
+    color: white;
+  }
+
+  .loaderWrapper {
     width: 100%;
     text-align: center;
   }

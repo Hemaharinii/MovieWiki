@@ -3,7 +3,7 @@ getLoaderContainer = () => {
 }
 
 addLoader = () => {
-  let loader = `<div class="loader-wrapper">
+  let loader = `<div class="loaderWrapper">
                   <div class="loader" style="margin: auto"></div>
                 </div>`;
   let resultContainer = getLoaderContainer();

@@ -64,9 +64,12 @@ function loadMovies() {
         }
       } else {
         document.getElementById("result").innerText = `${result.Error}`;
+        showErrorAlert(result.Error);
       }
 
       resetLoader();
+    }).catch((e) => {
+      showErrorAlert(e);
     });
 }
 
@@ -143,8 +146,12 @@ function getMovieData() {
         document.getElementById(
           "main"
         ).innerHTML = `<span> ${result.Error} </span>`;
+
+        showErrorAlert(result.Error);
       }
 
       resetLoader();
+    }).catch(e => {
+      showErrorAlert(e);
     });
 }
