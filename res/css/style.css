@@ -28,4 +28,169 @@ font-weight:700;
     margin: 0;
     font-family: TitilliumWeb;
   }
+  body {
+    margin: 0;
+    font-family: TitilliumWeb;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  fieldset {
+    margin: 0;
+    padding: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
+    -webkit-padding-after: 0;
+    border: 0;
+  }
+  
+  legend {
+    margin: 0;
+    padding: 0;
+    display: block;
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
+  }
+  
+  .movieSearch {
+    min-height: 100vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* background: url("../images/background.jpg"); */
+    background-color: #e74c3c;
+    background-size: cover;
+    background-position: center center;
+    padding: 15px;
+    font-family: TitilliumWeb;
+  }
+  
+  .movieSearch form {
+    width: 100%;
+    max-width: 914px;
+    margin: 0;
+  }
+  
+  .movieSearch form fieldset {
+    margin-bottom: 50px;
+  }
+  
+  .movieSearch form fieldset legend {
+    font-size: 4em;
+    font-weight: bold;
+    color: #f6b93b;
+    font-family: TitilliumWeb;
+    text-align: center;
+  }
+  
+  .movieSearch form .inner-form {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  
+  .movieSearch form .inner-form .left {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    /* display: flex; */
+  }
+  
+  .movieSearch form .inner-form .input-wrap {
+    background: #fff;
+    /* height: 80px; */
+    position: relative;
+    padding: 10px 12px;
+  }
+  
+  .movieSearch form .inner-form .input-wrap .input-field label {
+    font-size: 11px;
+    font-weight: 500;
+    display: block;
+    color: #555;
+  }
+  
+  .movieSearch form .inner-form .input-wrap .input-field input {
+    font-size: 16px;
+    color: #333;
+    background: transparent;
+    width: 100%;
+    border: 0;
+    font-family: TitilliumWeb;
+    padding: 8px 0;
+  }
+  
+  .movieSearch form .inner-form .input-wrap .input-field input.placeholder {
+    color: #808080;
+  }
+  
+  .movieSearch form .inner-form .input-wrap .input-field input:-moz-placeholder {
+    color: #808080;
+  }
+  
+  .movieSearch
+    form
+    .inner-form
+    .input-wrap
+    .input-field
+    input::-webkit-input-placeholder {
+    color: #808080;
+  }
+  
+  .movieSearch form .inner-form .input-wrap .input-field input.hover,
+  .movieSearch form .inner-form .input-wrap .input-field input:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+  
+  .movieSearch form .inner-form .input-wrap.first {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .movieSearch form .btn-search {
+    min-width: 110px;
+    /* height: 80px; */
+    padding: 0 15px;
+    background: #0984e3;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.2s ease-out, color 0.2s ease-out;
+    border: 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: TitilliumWeb;
+    margin-left: 10px;
+  }
+  
+  .movieSearch form .btn-search:hover {
+    background-color: #0984e3;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .movieSearch form .inner-form {
+      display: block;
+    }
+    .movieSearch form .inner-form .left {
+      display: block;
+    }
+    .movieSearch form .inner-form .left .input-wrap {
+      margin-bottom: 15px;
+    }
+    .movieSearch form .btn-search {
+      margin: 0;
+      width: 100%;
+    }
+  }
   
