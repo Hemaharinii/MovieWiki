@@ -10,7 +10,7 @@ function initialize() {
 function loadMovies() {
   //Get search term from URL
   let name = location.search.split("?q=")[1];
-  let url = `http://www.omdbapi.com/?apikey=58d4cff4&s=${name}&type=movie&page=${page}`;
+  let url = `https://www.omdbapi.com/?apikey=58d4cff4&s=${name}&type=movie&page=${page}`;
   //Fetch API
   fetch(url)
     .then(function(res) {
@@ -79,7 +79,7 @@ function goBack() {
   function getMovieData() {
     //   Get Movie ID
     let id = location.search.split("?movieId=")[1];
-    let url = `http://www.omdbapi.com/?apikey=4b80c23d&i=${id}&plot=full`;
+    let url = `https://www.omdbapi.com/?apikey=4b80c23d&i=${id}&plot=full`;
     fetch(url)
       .then(function(res) {
         return res.json();
