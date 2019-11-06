@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="res/css/style.css" />
+    <script src="res/js/script.js" />
+
+  </head>
+  <body onload="initialize()">
+    <div id="resultContent">
+      <div class="top">
+        <p id="searchTitle">Results for</p>
+        <p id="result"></p>
+      </div>
+      <div class="movies">
+        <div id="movies" class="thumbnails"></div>
+        <div class="buttonHolder">
+          <button
+            id="loadMore"
+            class="loadMore"
+            onclick="loadMovies()"
+            class="hide"
+          >
+            Load More
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+         var movies = [];
+        var page = 1;
+        var totalResults;
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
