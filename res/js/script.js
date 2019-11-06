@@ -1,4 +1,5 @@
 function initialize() {
+  //Get search term from URL
   let name = location.search.split("?q=")[1];
   document.getElementById("searchTitle").innerText = ` ${
     document.getElementById("searchTitle").innerText
@@ -7,22 +8,27 @@ function initialize() {
 }
 
 function loadMovies() {
+  //Get search term from URL
   let name = location.search.split("?q=")[1];
   let url = `http://www.omdbapi.com/?apikey=58d4cff4&s=${name}&type=movie&page=${page}`;
+  //Fetch API
   fetch(url)
     .then(function(res) {
       return res.json();
     })
     .then(function(result) {
+      // On Successfull API CALL
       if (result.Response === "True" && result.Search  && result.Search.length > 0) {
         totalResults = result.totalResults;
         document.getElementById(
           "result"
         ).innerText = `About ${result.totalResults} results found`;
+        //Add result to total movie results
         movies = [...movies, ...result.Search];
         movieList = result.Search;
         let resultContainer = document.getElementById("movies");
         movieList.forEach((movie, idx) => {
+          //Create a DOM element and append to Movie Listing
           let movieContainer = document.createElement("div");
           let containerAttr = document.createAttribute("onclick");
           containerAttr.value = `redirectToMovie('${movie.imdbID}')`;
@@ -62,13 +68,16 @@ function loadMovies() {
 }
 
 function redirectToMovie(movieId) {
+    //Handle result on click
   window.location.href = `/movie.html?movieId=${movieId}`;
 }
 
 function goBack() {
+    //Handle go back
     window.history.back();
   }
   function getMovieData() {
+    //   Get Movie ID
     let id = location.search.split("?movieId=")[1];
     let url = `http://www.omdbapi.com/?apikey=4b80c23d&i=${id}&plot=full`;
     fetch(url)
@@ -77,6 +86,7 @@ function goBack() {
       })
       .then(function(result) {
         if (result.Response === "True") {
+         //Add movie details Movie Detail Page
           document.getElementById("main").innerHTML = ` 
                     <div class="movieContentWrapper">
                         <div class="posterContent">

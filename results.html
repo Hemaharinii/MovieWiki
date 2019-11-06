@@ -3,16 +3,19 @@
   <head>
     <title>Search Results</title>
     <link rel="stylesheet" href="res/css/style.css" />
-
   </head>
+
   <body onload="initialize()">
+    <!-- Fetch API call on page load -->
     <div id="resultContent">
       <div class="top">
         <p id="searchTitle">Results for</p>
         <p id="result"></p>
       </div>
+      <!-- Movie listing -->
       <div class="movies">
         <div id="movies" class="thumbnails"></div>
+        <!-- Load more button -->
         <div class="buttonHolder">
           <button
             id="loadMore"
@@ -26,7 +29,8 @@
       </div>
     </div>
     <script>
-         var movies = [];
+        //Global variables for maintaing movies count
+        var movies = [];
         var page = 1;
         var totalResults;
     </script>
