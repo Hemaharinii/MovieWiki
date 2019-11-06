@@ -189,4 +189,259 @@ font-weight:700;
       width: 100%;
     }
   }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    height: 7vh;
+    background: #e74c3c;
+    color: #eee;
+  }
+  .movies {
+    color: rgba(255, 255, 255, 0.75);
+    background: #202024;
+    width: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+    line-height: 1.65;
+    padding: 20px 0px;
+  }
+  
+  @media screen and (max-width: 1680px) {
+    .movies,
+    input,
+    select,
+    textarea {
+      font-size: 11pt;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .movies,
+    input,
+    select,
+    textarea {
+      font-size: 11pt;
+    }
+  }
+  
+  @media screen and (max-width: 980px) {
+    .movies,
+    input,
+    select,
+    textarea {
+      font-size: 12pt;
+    }
+  }
+  
+  @media screen and (max-width: 736px) {
+    .movies,
+    input,
+    select,
+    textarea {
+      font-size: 12pt;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .movies,
+    input,
+    select,
+    textarea {
+      font-size: 12pt;
+    }
+  }
+  
+  p {
+    margin: 0 0 2em 0;
+  }
+  
+  h3 {
+    color: #fff;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+  }
+  
+  h3 {
+    font-size: 1.35em;
+  }
+  
+  .align-left {
+    text-align: left;
+  }
+  
+  .align-center {
+    text-align: center;
+  }
+  
+  .align-right {
+    text-align: right;
+  }
+  
+  .thumbnails {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-align-items: stretch;
+    -webkit-align-items: stretch;
+    -ms-align-items: stretch;
+    align-items: stretch;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  
+  .thumbnails .box {
+    margin: 0px 1em 1em 1em;
+    /* width: 30%; */
+    width: fit-content;
+  }
+  
+  @media screen and (max-width: 1280px) {
+    .thumbnails .box {
+      width: 45%;
+    }
+  }
+  
+  @media screen and (max-width: 736px) {
+    .thumbnails .box {
+      width: 100%;
+    }
+  }
+  
+  .box {
+    border-radius: 4px;
+    margin-bottom: 2em;
+    background: #2c2c32;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .box > :last-child,
+  .box > :last-child > :last-child,
+  .box > :last-child > :last-child > :last-child {
+    margin-bottom: 0;
+  }
+  
+  .box .image.fit {
+    margin: 0;
+  }
+  
+  .box .image img {
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .box .inner {
+    /* padding: 1.5em;
+        width: 100% !important; */
+  }
+  
+  @media screen and (max-width: 480px) {
+    .box .inner {
+      padding: 1em;
+    }
+  }
+  
+  .box.alt {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  
+  .image {
+    border-radius: 4px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .image img {
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .image.left,
+  .image.right {
+    max-width: 40%;
+  }
+  
+  .image.left img,
+  .image.right img {
+    width: 100%;
+  }
+  
+  .image.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+    top: 0.25em;
+  }
+  
+  .image.right {
+    float: right;
+    padding: 0 0 1em 1.5em;
+    top: 0.25em;
+  }
+  
+  .image.fit {
+    /* display: block; */
+    /* margin: 0 0 2em 0; */
+    /* width: 100%; */
+  }
+  
+  .image.fit img {
+    /* width: 100%; */
+    width: 200px;
+  }
+  
+  .image.main {
+    display: block;
+    margin: 0 0 3em 0;
+    width: 100%;
+  }
+  
+  .image.main img {
+    width: 100%;
+  }
+  .hide {
+    display: none;
+  }
+  .buttonHolder {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+  .loadMore {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.75em !important;
+    font-weight: 700;
+    letter-spacing: 0.125em;
+    line-height: 3.75em;
+    height: 3.75em;
+    padding: 0 2.25em;
+    border: 0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    background: #5fcec0;
+    color: #fff;
+    box-shadow: 0 0 0 2px #5fcec0;
+  }
+  
+  span {
+    display: block;
+    width: 200px;
+  }
+  
+  p#searchTitle,
+  p#result {
+    margin: auto 30px;
+  }  
   
