@@ -11,14 +11,15 @@ function loadMovies() {
   //Get search term from URL
   let name = location.search.split("?q=")[1];
   let url = `https://www.omdbapi.com/?apikey=58d4cff4&s=${name}&type=movie&page=${page}`;
+  addLoader();
   //Fetch API
   fetch(url)
-    .then(function(res) {
+    .then(function (res) {
       return res.json();
     })
-    .then(function(result) {
+    .then(function (result) {
       // On Successfull API CALL
-      if (result.Response === "True" && result.Search  && result.Search.length > 0) {
+      if (result.Response === "True" && result.Search && result.Search.length > 0) {
         totalResults = result.totalResults;
         document.getElementById(
           "result"
@@ -39,14 +40,14 @@ function loadMovies() {
           imageHolder.classList.add("fit");
           let movieImage = document.createElement("img");
           movieImage.src =
-            movie.Poster && movie.Poster != "N/A"
-              ? movie.Poster
-              : "res/img/movie.png";
+            movie.Poster && movie.Poster != "N/A" ?
+            movie.Poster :
+            "res/img/movie.png";
           imageHolder.appendChild(movieImage);
           movieContainer.appendChild(imageHolder);
           let movieDetails = document.createElement("div");
           movieDetails.className = "inner";
-          let movieName = document.createElement("h3");
+          let movieName = document.createElement("div");
           movieName.innerText = movie.Title;
           movieDetails.appendChild(movieName);
           let movieYear = document.createElement("p");
@@ -64,30 +65,34 @@ function loadMovies() {
       } else {
         document.getElementById("result").innerText = `${result.Error}`;
       }
+
+      resetLoader();
     });
 }
 
 function redirectToMovie(movieId) {
-    //Handle result on click
-    window.location.replace(`movie.html?movieId=${movieId}`);
+  //Handle result on click
+  window.location.href = `movie.html?movieId=${movieId}`;
 }
 
 function goBack() {
-    //Handle go back
-    window.history.back();
-  }
-  function getMovieData() {
-    //   Get Movie ID
-    let id = location.search.split("?movieId=")[1];
-    let url = `https://www.omdbapi.com/?apikey=4b80c23d&i=${id}&plot=full`;
-    fetch(url)
-      .then(function(res) {
-        return res.json();
-      })
-      .then(function(result) {
-        if (result.Response === "True") {
-         //Add movie details Movie Detail Page
-          document.getElementById("main").innerHTML = ` 
+  //Handle go back
+  window.history.back();
+}
+
+function getMovieData() {
+  //   Get Movie ID
+  let id = location.search.split("?movieId=")[1];
+  let url = `https://www.omdbapi.com/?apikey=4b80c23d&i=${id}&plot=full`;
+  addLoader();
+  fetch(url)
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (result) {
+      if (result.Response === "True") {
+        //Add movie details Movie Detail Page
+        document.getElementById("main").innerHTML = ` 
                     <div class="movieContentWrapper">
                         <div class="posterContent">
                                 <img id="poster" class="poster" src="${
@@ -134,10 +139,12 @@ function goBack() {
                         </div>
                 </div>
                     `;
-        } else {
-          document.getElementById(
-            "main"
-          ).innerHTML = `<span> ${result.Error} </span>`;
-        }
-      });
-  }
+      } else {
+        document.getElementById(
+          "main"
+        ).innerHTML = `<span> ${result.Error} </span>`;
+      }
+
+      resetLoader();
+    });
+}

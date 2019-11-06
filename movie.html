@@ -12,11 +12,12 @@
     />
   </head>
   <body onload="getMovieData()">
-    <span onclick="goBack()" style="cursor: pointer; margin: 50px 30px;">
-      <i class="fa fa-long-arrow-left" style="font-size:20px"></i>
-      <span style="font-size:20px">Back to results</span>
+    <span onclick="goBack()" class="go-back-btn">
+      <i class="fa fa-chevron-left" style="font-size:20px"></i>
     </span>
+    <div id="loaderContainer"></div>
     <div id="main"></div>
     <script src="res/js/script.js" > </script>
+    <script src="res/js/loader.js" > </script>
   </body>
 </html>
