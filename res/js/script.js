@@ -69,7 +69,7 @@ function loadMovies() {
 
 function redirectToMovie(movieId) {
     //Handle result on click
-    window.location.replace(`/movie.html?movieId=${movieId}`);
+    window.location.replace(`movie.html?movieId=${movieId}`);
 }
 
 function goBack() {
