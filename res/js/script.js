@@ -89,7 +89,8 @@ function toggleFavourites(event) {
   let name = el.getAttribute('data-movie-name');
 
   if(el.classList.contains("show")) {
-    el.classList.remove("show")
+    el.classList.remove("show");
+    showAlert(`${name} has been removed from your interest`, 4000, "info");
   } else {
     el.classList.add("show");
     showAlert(`${name} has been addded to your interest`, 4000, "info");
