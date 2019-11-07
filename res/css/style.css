@@ -613,7 +613,7 @@ font-weight:700;
     margin: 10px;
   }  
 
-  .errorWrapper {
+  .alertWrapper {
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -622,19 +622,26 @@ font-weight:700;
     box-shadow: 1px 2 0 1px #999;
   }
 
-  .errorWrapper .errorContainer {
+  .alertWrapper .alertContainer {
     opacity: 0;
-    background: red;
     padding: 15px;
     border-radius: 10px;
     transition: all .5s;
   }
 
-  .errorWrapper .errorContainer.show {
+  .alertWrapper .alertContainer.info {
+    background: green;
+  }
+
+  .alertWrapper .alertContainer.error {
+    background: red!important;
+  }
+
+  .alertWrapper .alertContainer.show {
     opacity: 1!important;
   }
 
-  .errorWrapper .errorContainer .errorText {
+  .alertWrapper .alertContainer .alertText {
     color: white;
   }
 

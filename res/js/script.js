@@ -38,7 +38,7 @@ function loadMovies() {
           let favouriteContainer = document.createElement("div");
           favouriteContainer.className = "favourites"
           favouriteContainer.innerHTML = `
-            <div id="fav-${movie.imdbID}" onclick="toggleFavourites(event)" class="favouriteContainer">
+            <div id="fav-${movie.imdbID}" data-movie-name="${movie.Title}" onclick="toggleFavourites(event)" class="favouriteContainer">
               <i class='material-icons'>whatshot</i>
             </div>
           `;
@@ -72,12 +72,12 @@ function loadMovies() {
         }
       } else {
         document.getElementById("result").innerText = `${result.Error}`;
-        showErrorAlert(result.Error);
+        showAlert(result.Error, 4000);
       }
 
       resetLoader();
     }).catch((e) => {
-      showErrorAlert(e);
+      showAlert(e, 4000);
     });
 }
 
@@ -86,11 +86,13 @@ function toggleFavourites(event) {
   event.stopPropagation();
   event.preventDefault();
   let el = document.getElementById(event.currentTarget.id)
+  let name = el.getAttribute('data-movie-name');
 
   if(el.classList.contains("show")) {
     el.classList.remove("show")
   } else {
     el.classList.add("show");
+    showAlert(`${name} has been addded to your interest`, 4000, "info");
   }
 }
 
@@ -168,11 +170,11 @@ function getMovieData() {
           "main"
         ).innerHTML = `<span> ${result.Error} </span>`;
 
-        showErrorAlert(result.Error);
+        showAlert(result.Error, 4000);
       }
 
       resetLoader();
     }).catch(e => {
-      showErrorAlert(e);
+      showAlert(e, 4000);
     });
 }
