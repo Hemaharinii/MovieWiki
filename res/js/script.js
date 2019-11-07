@@ -35,6 +35,14 @@ function loadMovies() {
           containerAttr.value = `redirectToMovie('${movie.imdbID}')`;
           movieContainer.setAttributeNode(containerAttr);
           movieContainer.className = "box";
+          let favouriteContainer = document.createElement("div");
+          favouriteContainer.className = "favourites"
+          favouriteContainer.innerHTML = `
+            <div id="fav-${movie.imdbID}" onclick="toggleFavourites(event)" class="favouriteContainer">
+              <i class='material-icons'>whatshot</i>
+            </div>
+          `;
+          movieContainer.appendChild(favouriteContainer);
           let imageHolder = document.createElement("a");
           imageHolder.classList.add("image");
           imageHolder.classList.add("fit");
@@ -71,6 +79,19 @@ function loadMovies() {
     }).catch((e) => {
       showErrorAlert(e);
     });
+}
+
+function toggleFavourites(event) {
+
+  event.stopPropagation();
+  event.preventDefault();
+  let el = document.getElementById(event.currentTarget.id)
+
+  if(el.classList.contains("show")) {
+    el.classList.remove("show")
+  } else {
+    el.classList.add("show");
+  }
 }
 
 function redirectToMovie(movieId) {
